@@ -669,3 +669,19 @@ p {
     height: 64px;
   }
 }
+
+/* Project prev/next navigation styling */
+.project-nav {
+  display: flex;
+  justify-content: space-between; /* justify links to edges */
+  margin-top: 20px;
+  gap: 12px;
+}
+.project-nav a {
+  color: #fff; /* white */
+  font-weight: 700; /* bolder */
+  text-decoration: none;
+}
+.project-nav a:hover {
+  text-decoration: underline;
+}

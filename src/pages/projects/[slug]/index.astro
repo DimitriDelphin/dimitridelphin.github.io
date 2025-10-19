@@ -1,0 +1,61 @@
+---
+import Header from '../../../components/Header.astro';
+import Sidebar from '../../../components/Sidebar.astro';
+import { projects, getProjectBySlug } from '../../../data/projects.js';
+
+export async function getStaticPaths() {
+  return projects.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const project = getProjectBySlug(slug);
+if (!project) {
+  throw Astro.redirect('/personal-projects');
+}
+
+// compute prev/next with wrap-around
+const currentIndex = projects.findIndex((p) => p.slug === slug);
+const prevIndex = (currentIndex - 1 + projects.length) % projects.length;
+const nextIndex = (currentIndex + 1) % projects.length;
+const prevProject = projects[prevIndex];
+const nextProject = projects[nextIndex];
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title={`${project.title} | Sam Bernstein`} />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="personal-projects" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/personal-projects" class="back-nav-button w-inline-block">
+              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div></a>
+          </div>
+          <div class="content-container">
+            <h1>{project.title}</h1>
+            <div class="project-desc w-richtext">
+              <ul role="list">
+                {project.desc.map(d => <li>{d}</li>)}
+              </ul>
+            </div>
+
+            <div class="mini-label-white">Technologies &amp; tools</div>
+            <div class="chips-container">
+              {project.tech.map(t => <div class="single-chip">{t}</div>)}
+            </div>
+
+            <div class="project-nav">
+              <a class="project-nav-prev" href={`/projects/${prevProject.slug}`}>← {prevProject.title}</a>
+              <a class="project-nav-next" href={`/projects/${nextProject.slug}`}>{nextProject.title} →</a>
+            </div>
+
+            
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
