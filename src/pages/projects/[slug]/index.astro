@@ -42,11 +42,6 @@ const nextProject = projects[nextIndex];
               </ul>
             </div>
 
-            <div class="mini-label-white">Technologies &amp; tools</div>
-            <div class="chips-container">
-              {project.tech.map(t => <div class="single-chip">{t}</div>)}
-            </div>
-
             <div class="project-nav">
               <a class="project-nav-prev" href={`/projects/${prevProject.slug}`}>← {prevProject.title}</a>
               <a class="project-nav-next" href={`/projects/${nextProject.slug}`}>{nextProject.title} →</a>

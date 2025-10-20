@@ -389,31 +389,7 @@ p {
   color: #a8a8a8;
 }
 
-.chips-container {
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-top: 8px;
-  display: flex;
-}
-
-.chips-container.chips-container-small-width {
-  max-width: 380px;
-}
-
-.single-chip {
-  color: #fff;
-  background-color: #353535;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-family: IBM Plex Mono, sans-serif;
-}
-
-.single-chip.small-chip {
-  padding: 4px 8px;
-  font-size: 12px;
-}
+/* chips (technologies) removed — styles left for potential future use */
 
 .single-item {
   font-size: 16px;
@@ -499,11 +475,6 @@ p {
   display: flex;
 }
 
-.tech-tools-container {
-  flex-direction: column;
-  justify-content: flex-end;
-  display: flex;
-}
 
 .back-nav-container {
   color: #fff;
