@@ -14,15 +14,9 @@ const { selectedItem } = Astro.props;
   <div class="nav-content">
     <a href="/" class="w-nav-brand" aria-label="home">
       <div class="niv-data">
-        <img
-          src="/assets/dim.jpg"
-          loading="eager"
-          alt="Profile picture"
-          class="niv-image"
-        />
+        
         <div>
-          <div class="label-white">Dimitri Delphin</div>
-          <div class="label-gray">Concepteur expériences & systèmes</div>
+          <h2>Dimitri Delphin</h2>
         </div>
       </div>
     </a>
@@ -34,13 +28,8 @@ const { selectedItem } = Astro.props;
           selectedItem === 'home' ? 'w--current' : ''
         }`}
       >
-        <img
-          src="/assets/home.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Home</div>
+  
+        <div>À propos</div>
       </a>
       <a
         href="/Projets"
@@ -48,12 +37,7 @@ const { selectedItem } = Astro.props;
           selectedItem === 'Projets' ? 'w--current' : ''
         }`}
       >
-        <img
-          src="/assets/favorite.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
+     
         <div>Projets</div>
       </a>
     

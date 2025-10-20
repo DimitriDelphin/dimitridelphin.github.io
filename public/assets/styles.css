@@ -265,7 +265,7 @@ h4 {
 }
 
 p {
-  color: #a8a8a8;
+  color: #59554C;
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 26px;
@@ -303,7 +303,7 @@ p {
 }
 
 .label-gray {
-  color: #a8a8a8;
+  color: #59554C;
   font-size: 14px;
   line-height: 22px;
 }
@@ -344,10 +344,16 @@ p {
 }
 
 .lead {
-  max-width: 580px;
-  color: #fff;
+  max-width: 1100px;
+  color: #59554C;
   margin-bottom: 0;
   line-height: 26px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button {
@@ -373,7 +379,7 @@ p {
 }
 
 .mini-label-white {
-  color: #fff;
+  color: #59554C;
   letter-spacing: 0.75px;
   text-transform: uppercase;
   margin-top: 24px;
@@ -384,7 +390,7 @@ p {
 }
 
 .mini-label-white.gray-color {
-  color: #a8a8a8;
+  color: #59554C;
 }
 
 /* chips (technologies) removed — styles left for potential future use */
@@ -412,7 +418,7 @@ p {
 .nav-link-container {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  color: #a8a8a8;
+  color: #59554C;
   text-transform: capitalize;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 8px;
@@ -508,6 +514,22 @@ p {
 .project-desc {
   color: #a8a8a8;
   line-height: 24px;
+}
+
+/* Justify project descriptions and lead paragraphs */
+.project-desc,
+.lead {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align-last: left; /* keep last line left-aligned */
+}
+
+.align {
+  text-align: center;
+
 }
 
 .project-desc.project-desc-list {
