@@ -17,18 +17,17 @@ section {
   display: block;
 }
 
-a {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-a:active,
-a:hover {
-  outline: 0;
-}
-
-h1 {
-  margin: 0.67em 0;
-  font-size: 2em;
+.main {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(238, 0, 0, 0.64), rgba(28, 28, 28, 0.64)), url('./grid-top-right.svg'), linear-gradient(rgba(28, 28, 28, 0.24), rgba(28, 28, 28, 0.24));
+  background-position: 0 0, 0 0, 0 0;
+  background-size: auto, auto 1130px, auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 80px 120px; /* increased padding for wider layout */
+  display: flex;
+  overflow: auto;
 }
 
 img {
@@ -182,7 +181,6 @@ ul {
   float: right;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -231,7 +229,7 @@ ul {
 }
 
 body {
-  color: #333;
+  color: #333333be;
   background-color: #161616;
   font-family: IBM Plex Sans, sans-serif;
   font-size: 14px;
@@ -239,7 +237,7 @@ body {
 }
 
 h1 {
-  color: #fff;
+  color: #59554C;
   letter-spacing: -0.5px;
   margin-top: 0;
   margin-bottom: 18px;
@@ -249,7 +247,7 @@ h1 {
 }
 
 h3 {
-  color: #fff;
+  color: #59554C;
   margin-top: 0;
   margin-bottom: 12px;
   font-size: 32px;
@@ -258,7 +256,7 @@ h3 {
 }
 
 h4 {
-  color: #fff;
+  color: #59554C;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
@@ -282,9 +280,9 @@ p {
 .sidebar {
   width: 100%;
   height: 100%;
-  max-width: 280px;
-  background-color: #1900ff;
-  border-right: 1px solid #353535;
+  max-width: 300px;
+  background-color: #AEBFBE;
+  border-right: 5px solid #59554C;
   padding: 32px;
 }
 
@@ -298,7 +296,7 @@ p {
 }
 
 .label-white {
-  color: #fff;
+  color: #59554C;
   margin-bottom: 2px;
   font-size: 16px;
   line-height: 24px;
@@ -326,7 +324,7 @@ p {
 .main {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(238, 0, 0, 0.64), rgba(28, 28, 28, 0.64)), url('./grid-top-right.svg'), linear-gradient(rgba(28, 28, 28, 0.24), rgba(28, 28, 28, 0.24));
+  background-image: linear-gradient(rgb(208, 217, 212), rgba(242, 239, 223,1 ));
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto 1130px, auto;
   flex-direction: column;
@@ -338,7 +336,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 680px;
+  max-width: 1100px; /* wider content area */
   grid-column-gap: 68px;
   grid-row-gap: 68px;
   flex-direction: column;
