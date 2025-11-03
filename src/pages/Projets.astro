@@ -11,7 +11,7 @@ import { projects } from '../data/projects.js';
   <Header title="Projets | Dimitri Delphin" />
   <body>
     <div class="content">
-        <Sidebar selectedItem="Projets" />
+        <Sidebar selectedItem="Recherches et créations" />
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
@@ -19,9 +19,11 @@ import { projects } from '../data/projects.js';
             
           </div>
           <div class="content-container">
-            <h1 style="font-size : 80px;" class="project-title" >Recherches et créations</h1>
+           <div class="fold-content">
+              <h1 class="align">Recherches et créations</h1>
+            </div>
             <section class="items-container">
-                <div class="resouce-items">
+                <div class="resouce-items" >
                     {projects.map(project => (
                       <Project 
                         title={project.title} 

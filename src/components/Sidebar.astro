@@ -2,26 +2,29 @@
 const { selectedItem } = Astro.props;
 ---
 
-<aside
+<header
   data-animation="default"
   data-collapse="medium"
   data-duration="400"
   data-easing="ease"
   data-easing2="ease"
   role="banner"
-  class="sidebar w-nav"
+  class="headbar w-nav"
 >
-  <div class="nav-content">
-    <a href="/" class="w-nav-brand" aria-label="home">
+  <div class="container">
+    <div class="nav-content nav-content--headbar">
+   
+
+    <nav role="navigation" class="w-nav-menu">
+       <a href="/" class="w-nav-brand" aria-label="home">
       <div class="niv-data">
         
         <div>
-          <h2>Dimitri Delphin</h2>
+          <h2 style="margin-left: -1250px; font-size: 30px;">Dimitri Delphin</h2>
         </div>
       </div>
     </a>
 
-    <nav role="navigation" class="w-nav-menu">
       <a
         href="/"
         class={`nav-link-container w-inline-block ${
@@ -29,16 +32,16 @@ const { selectedItem } = Astro.props;
         }`}
       >
   
-        <div>À propos</div>
+        <div style="font-size:20px">À propos</div>
       </a>
       <a
         href="/Projets"
         class={`nav-link-container w-inline-block ${
-          selectedItem === 'Projets' ? 'w--current' : ''
+          selectedItem === 'Recherches et créations' ? 'w--current' : ''
         }`}
       >
      
-        <div>Projets</div>
+        <div style="font-size:20px">Recherches et créations</div>
       </a>
     
 
@@ -59,6 +62,7 @@ const { selectedItem } = Astro.props;
         class="navbar-icon"
       />
     </div>
+    </div>
   </div>
 
   <script>
@@ -74,4 +78,4 @@ const { selectedItem } = Astro.props;
       if (cleanup) cleanup();
     });
   </script>
-</aside>
+</header>

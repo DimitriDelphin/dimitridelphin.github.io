@@ -229,15 +229,20 @@ ul {
 }
 
 body {
-  color: #333333be;
-  background-color: #161616;
+  color: #ffffff;
+  background-color: #ffffff;
   font-family: IBM Plex Sans, sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
 
+/* Headbar brand left margin — change this value to move the brand from the left */
+:root {
+  --headbar-brand-margin-left: 32px;
+}
+
 h1 {
-  color: #59554C;
+  color: #181817;
   letter-spacing: -0.5px;
   margin-top: 0;
   margin-bottom: 18px;
@@ -262,7 +267,7 @@ h3 {
   line-height: 42px;
 }
 h4 {
-  color: #59554C;
+  color: #181817;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
@@ -271,7 +276,7 @@ h4 {
 }
 
 p {
-  color: #59554C;
+  color: #181817;
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 26px;
@@ -279,8 +284,111 @@ p {
 
 .content {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column; /* stack header (headbar) above main content */
+}
+
+/* Headbar (replaces the previous vertical sidebar) */
+.headbar {
+  width: 100%;
+  background-color: #ffffff;
+  
+  padding: 20px 0; /* container provides horizontal alignment */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Make the headbar a fixed row height and vertically center brand + links */
+.headbar {
+  min-height: 56px;
+}
+
+.nav-content--headbar {
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  flex-wrap: nowrap; /* keep brand and menu on same row */
+  display: flex; /* ensure flex layout (overrides global .nav-content) */
+}
+
+/* Put the headbar nav inside the page container and force the container to
+   layout items on one horizontal row so brand + links never wrap. */
+.headbar > .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  padding-left: var(--headbar-brand-margin-left);
+  padding-right: 0;
+}
+
+.headbar .nav-content--headbar {
+  flex: 1 1 auto; /* occupy remaining space so menu can be right-aligned */
+}
+
+.headbar .w-nav-brand h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Ensure the brand's line-height matches the headbar so it aligns with links */
+.headbar .w-nav-brand h2 {
+  line-height: 56px;
+}
+
+.headbar .w-nav-brand {
+  /* override any float rules and enforce left alignment in the headbar */
+  float: none !important;
+  display: flex;
+  align-items: center;
+  margin-left: 0; /* use padding on the container for left offset instead */
+  max-width: none;
+}
+
+/* Force the brand anchor to the same row height and center its text */
+.headbar .w-nav-brand {
+  height: 56px;
+}
+
+.headbar .w-nav-brand h2 {
+  line-height: normal; /* remove large line-height, let flex center it */
+  margin: 0; /* ensure no top/bottom margin shifts */
+  display: inline-block;
+}
+
+/* Use container padding to control how far the brand sits from the left edge */
+.nav-content--headbar {
+  padding-left: var(--headbar-brand-margin-left);
+}
+
+/* Lay out the headbar nav links side-by-side */
+.headbar .w-nav-menu {
+  display: flex !important;
+  flex-direction: row;
+  gap: 18px;
+  align-items: center;
+  margin-left: auto; /* push menu to the right */
+}
+
+.headbar .nav-link-container {
+  display: inline-flex; /* prevent full-width blocks */
+  align-items: center;
+  padding: 8px 12px;
+  background: transparent;
+}
+
+/* Force nav links to use the same row height and vertically center their text */
+.headbar .nav-link-container {
+  height: 56px;
+  align-items: center;
+}
+
+.headbar .nav-link-container.w--current {
+  background-color: rgba(0,0,0,0.08);
 }
 
 .sidebar {
@@ -330,7 +438,7 @@ p {
 .main {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgb(240, 255, 255), rgb(185, 185, 185));
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto 1130px, auto;
   flex-direction: column;
@@ -342,7 +450,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 1400px; /* wider content area */
+  max-width: 1550px; /* wider content area */
   grid-column-gap: 8px;
   grid-row-gap: 15px;
   flex-direction: column;
@@ -350,10 +458,10 @@ p {
 }
 
 .lead {
-  max-width: 900px;
+  max-width: 1000px;
   color: #000000;
   margin-bottom: 0;
-  line-height: 23px; <!-- slightly tighter line height for lead paragraphs -->
+  line-height: 23px; /* espace entre les ligne */
 }
 
 .center {
@@ -407,13 +515,15 @@ p {
 
 .resouce-items {
   grid-column-gap: 64px;
-  grid-row-gap: 64px;
+  grid-row-gap: 4px;
   flex-direction: column;
+  align-items: center;
   display: flex;
 }
 
 .items-container {
   flex-direction: column;
+  align-items: center;
 }
 
 .nav-link-image {
@@ -487,7 +597,7 @@ p {
 
 
 .back-nav-container {
-  color: #fff;
+  color: #000000;
   letter-spacing: 2px;
   text-transform: uppercase;
   align-items: center;
@@ -501,7 +611,7 @@ p {
 }
 
 .back-nav-button {
-  color: #fff;
+  color: #000000;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 8px;
   margin-top: -12px;
@@ -531,6 +641,46 @@ p {
   -ms-hyphens: auto;
   hyphens: auto;
   text-align-last: left; /* keep last line left-aligned */
+}
+
+/* Two-column layout for project content: text on the left, media on the right */
+.project-content-area {
+  display: grid;
+  grid-template-columns: 1fr 750px; /* flexible text column + fixed-ish media column */
+  gap: 32px;
+  align-items: start;
+}
+
+.project-media-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.project-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.project-video iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 900px) {
+  .project-content-area {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+
+  .project-media-grid {
+    order: 2; /* keep media after text when stacked */
+  }
 }
 
 .align {
