@@ -2,12 +2,12 @@
 import Header from '../../../components/Header.astro';
 import Sidebar from '../../../components/Sidebar.astro';
 import { projects, getProjectBySlug } from '../../../data/projects.js';
-const project = getProjectBySlug('Je me tais');
+const project = getProjectBySlug('La Plage aux Crabes');
 ---
 
 <!DOCTYPE html>
 <html>
-	<Header title={`${project?.title ?? 'Je me tais'} | Dimitri Delphin`} />
+	<Header title={`${project?.title ?? 'La Plage aux Crabes'} | Dimitri Delphin`} />
 	<body>
 		<div class="content">
 			<Sidebar selectedItem="Projets" />
@@ -20,8 +20,7 @@ const project = getProjectBySlug('Je me tais');
 						</a>
 					</div>
 					<div class="content-container">
-                        
-						<h1 style="font-size : 80px;" class="project-title">{project?.title}</h1>
+						<h1>{project?.title}</h1>
 
 						<div class="project-desc w-richtext">
 							<ul role="list">
