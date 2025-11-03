@@ -16,34 +16,46 @@ const project = getProjectBySlug('Je me tais');
 					<div class="back-nav-container">
 						<a href="/Projets" class="back-nav-button w-inline-block">
 							<img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
-							<div>Back</div>
+							<div>Retour</div>
 						</a>
 					</div>
 					<div class="content-container">
                         
 						<h1 style="font-size : 80px;" class="project-title">{project?.title}</h1>
 
-						<div class="project-desc w-richtext">
-							<ul role="list">
-								{project?.desc?.map(item => <li>{item}</li>)}
-							</ul>
-						</div>
-
-						<!-- Flexible content area: edit this block with your words, photos, videos -->
 						<section class="project-content-area">
 							<div class="project-text">
-								<h2>About this project</h2>
-								<p>Write your long-form text here — paragraphs, lists, blockquotes, whatever you need.</p>
+								<h4  class = "lead"> Transposition sonore et performative du poème "Je me tais" de Carole David.</br>
+									Projet réalisé dans le cadre de l’école d’été au CMMAS (Morelia, Mexique) organisé par l’université Concordia</br>							
+									</br></h4>
+								<h4  style="font-size : 30px;" class="project-title">Crédits :</h4></br>
+
+								<h4 class="lead">Composition sonore : Dimitri Delphin</br>
+									Performance : Ines Moulines</br>
+									Lecture : Sofia Lopez Asselin, Brianna Kermandy - Ramirez</br>
+									Scénographie : Sofia Lopez Asselin, Brianna Kermandy - Ramirez</br>
+									Année : 2022</h4></br></br>
 							</div>
 
 							<div class="project-media-grid">
-								<figure class="project-figure">
+								<!--<figure class="project-figure">
 									<img src="/assets/example.jpg" alt="Example image" />
 									<figcaption>Example caption</figcaption>
-								</figure>
+								</figure>-->
 
 								<div class="project-video">
-									<iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<iframe
+									title="vimeo-player" 
+									src="https://player.vimeo.com/video/738487615?h=8c40fa6d4d" 
+									width="640" 
+									height="360"
+									class="center" 
+									frameborder="0"
+									referrerpolicy="strict-origin-when-cross-origin" 
+									allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+									allowfullscreen>
+									</iframe>
+
 								</div>
 							</div>
 						</section>
