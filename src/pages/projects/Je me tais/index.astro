@@ -1,0 +1,57 @@
+---
+import Header from '../../../components/Header.astro';
+import Sidebar from '../../../components/Sidebar.astro';
+import { projects, getProjectBySlug } from '../../../data/projects.js';
+const project = getProjectBySlug('Je me tais');
+---
+
+<!DOCTYPE html>
+<html>
+	<Header title={`${project?.title ?? 'Je me tais'} | Dimitri Delphin`} />
+	<body>
+		<div class="content">
+			<Sidebar selectedItem="Projets" />
+			<nav class="main">
+				<div class="container">
+					<div class="back-nav-container">
+						<a href="/Projets" class="back-nav-button w-inline-block">
+							<img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+							<div>Back</div>
+						</a>
+					</div>
+					<div class="content-container">
+                        
+						<h1 class="project-title">{project?.title}</h1>
+
+						<div class="project-desc w-richtext">
+							<ul role="list">
+								{project?.desc?.map(item => <li>{item}</li>)}
+							</ul>
+						</div>
+
+						<!-- Flexible content area: edit this block with your words, photos, videos -->
+						<section class="project-content-area">
+							<div class="project-text">
+								<h2>About this project</h2>
+								<p>Write your long-form text here — paragraphs, lists, blockquotes, whatever you need.</p>
+							</div>
+
+							<div class="project-media-grid">
+								<figure class="project-figure">
+									<img src="/assets/example.jpg" alt="Example image" />
+									<figcaption>Example caption</figcaption>
+								</figure>
+
+								<div class="project-video">
+									<iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+							</div>
+						</section>
+
+					</div>
+				</div>
+			</nav>
+		</div>
+	</body>
+</html>
+

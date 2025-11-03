@@ -246,6 +246,13 @@ h1 {
   line-height: 72px;
 }
 
+/* Stronger weight for project titles when desired */
+.project-title {
+  /* use 600 because IBM Plex Sans is loaded up to 600; 700 may not be available */
+  font-size : 100px;
+  font-weight: 600; /* visibly bolder but matches available font weights */
+}
+
 h3 {
   color: #59554C;
   margin-top: 0;
@@ -254,7 +261,6 @@ h3 {
   font-weight: 400;
   line-height: 42px;
 }
-
 h4 {
   color: #59554C;
   margin-top: 0;
@@ -674,5 +680,16 @@ p {
   text-decoration: none;
 }
 .project-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure project title links don't turn browser-default blue/purple when visited.
+   Use the surrounding heading color and keep underline only on hover. */
+.single-item h3 a,
+.single-item h3 a:visited {
+  color: inherit; /* match the heading color */
+  text-decoration: none;
+}
+.single-item h3 a:hover {
   text-decoration: underline;
 }
