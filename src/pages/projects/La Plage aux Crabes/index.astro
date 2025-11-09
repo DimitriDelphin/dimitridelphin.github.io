@@ -15,12 +15,11 @@ const project = getProjectBySlug('La Plage aux Crabes');
 				<div class="container">
 					<div class="back-nav-container">
 						<a href="/Projets" class="back-nav-button w-inline-block">
-							<img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
-							<div>Back</div>
+							<div>Retour</div>
 						</a>
 					</div>
 					<div class="content-container">
-						<h1>{project?.title}</h1>
+						<h1 class="align">{project?.title}</h1>
 
 						<div class="project-desc w-richtext">
 							<ul role="list">
@@ -28,22 +27,88 @@ const project = getProjectBySlug('La Plage aux Crabes');
 							</ul>
 						</div>
 
-						<!-- Flexible content area: edit this block with your words, photos, videos -->
 						<section class="project-content-area">
 							<div class="project-text">
-								<h2>About this project</h2>
-								<p>Write your long-form text here — paragraphs, lists, blockquotes, whatever you need.</p>
+								<h4  class = "lead" style="margin-left: 100px;"> 
+									La Plage aux Crabes est une expérience documentaire audio immersive qui explore la manière dont plusieurs récits 
+									de vie peuvent s’unir pour former une mémoire collective. </br></br>
+									Réalisée dans le cadre d’une maîtrise en recherche-création
+									à l’Université du Québec à Montréal, l’œuvre plonge le public dans les récits intimes de cinq personnes ayant traversé
+									un cancer. Présentée dans un dôme audio composé de 32 haut-parleurs, elle enveloppe l’auditeur d’entrevues 
+									et d'une bande sonore électroacoustique spatialisée, invitant à une écoute active et sensible.</br></br>
+									La Plage aux Crabes s’appuie sur un système de diffusion spatialisé où la circulation et la position des sons 
+									deviennent les vecteurs du récit. Plutôt que de raconter par l’image, l’œuvre crée un environnement sonore qui 
+									invite à habiter les récits et à ressentir le temps autrement. Inspirée par différents concepts philosophiques 
+									portant sur la temporalité, les forces de reliance et la notion d’immersion, l’œuvre traduit ces réflexions 
+									en principes de spatialisation sonore. Ces règles deviennent la trame d’une écriture sensible où sons et espaces 
+									s’entrelacent, offrant une cohérence renouvelée à l’expérience d’écoute — entre mémoire, présence et résonance 
+									intérieure</h4></br>
+								<h4  style="font-size : 25px; margin-left: 100px;" class="project-title" >Crédits :</h4></br>
+
+								<h4 class="lead" style="margin-left: 100px;">
+									Entrevues, composition et spatialisation sonore : Dimitri Delphin</br>
+									Année : 2024</h4></br></br>
+
+									<h4  style="font-size : 25px; margin-left: 100px;" class="project-title" >Remerciements :</h4></br>
+
+								<h4 class="lead" style="margin-left: 100px;">
+									Groupe sur la médiatisation du son (GRMS)</br>
+									Hexagram UQAM</h4></br></br>
+
+								<h4 class="lead" style="margin-left: 100px;">
+									Version audio binaurale pour écoute avec casque</br></br>
+									<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1706886240&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dimitri-delphin" title="Dimitri Delphin" target="_blank" style="color: #cccccc; text-decoration: none;">Dimitri Delphin</a> · <a href="https://soundcloud.com/dimitri-delphin/la-plage-aux-crabes-novembre-2023-bin" title="La plage aux Crabes - Décembre 2023 - BIN" target="_blank" style="color: #cccccc; text-decoration: none;">La plage aux Crabes - Décembre 2023 - BIN</a></div>
+								</h4>
+
+									<figure class="project-figure">
+									<img src="/assets/PAC_02_crédit-Maude Turcot.jpeg"
+                       				loading="eager"    		
+                        			style="width:650px; height:auto; object-fit:cover;margin-left:70px;"
+                        			/>
+									<figcaption style="margin-left:70px"><h4 style="font-size:10px">© Maude Turcot</h4></figcaption>
+									</figure>
+								</br >	
+									<figure class="project-figure">
+									<img src="/assets/PAC_04_crédit-Maude Turcot.jpeg"
+                       				loading="eager"
+                        			style="width:650px; height:auto; object-fit:cover;margin-left:70px;"
+                        			/>
+									<figcaption style="margin-left:70px"><h4 style="font-size:10px">© Maude Turcot</h4></figcaption>
+								</figure>
 							</div>
 
 							<div class="project-media-grid">
+								<div class="project-video">
+									<iframe
+									title="vimeo-player" 
+									src="https://www.youtube.com/watch?v=0btOr3sscrA" 
+									width="640" 
+									height="360"
+									class="center" 
+									frameborder="0"
+									referrerpolicy="strict-origin-when-cross-origin" 
+									allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+									allowfullscreen>
+									</iframe>
+								</div>
 								<figure class="project-figure">
-									<img src="/assets/example.jpg" alt="Example image" />
-									<figcaption>Example caption</figcaption>
+									<img src="/assets/PAC_05_crédit-Maude Turcot.jpeg"
+                       				loading="eager"    		
+                        			style="width:650px; height:auto; object-fit:cover;margin-left:10px;"
+                        			/>
+									<figcaption style="margin-left:10px"><h4 style="font-size:10px">© Maude Turcot</h4></figcaption>
+								</figure>
+								<figure class="project-figure">
+									<img src="/assets/PAC_06_crédit-Maude Turcot.jpeg"
+                       				loading="eager"    		
+                        			style="width:650px; height:auto; object-fit:cover;margin-left:10px;"
+                        			/>
+									<figcaption style="margin-left:10px"><h4 style="font-size:10px">© Maude Turcot</h4></figcaption>
 								</figure>
 
-								<div class="project-video">
-									<iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
+								
+
+								
 							</div>
 						</section>
 
