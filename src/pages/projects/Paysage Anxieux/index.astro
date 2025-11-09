@@ -1,0 +1,65 @@
+---
+import Header from '../../../components/Header.astro';
+import Sidebar from '../../../components/Sidebar.astro';
+import { projects, getProjectBySlug } from '../../../data/projects.js';
+const project = getProjectBySlug('Paysage Anxieux');
+---
+
+<!DOCTYPE html>
+<html>
+	<Header title={`${project?.title ?? 'Paysage Anxieux'} | Dimitri Delphin`} />
+	<body>
+		<div class="content">
+			<Sidebar selectedItem="Projets" />
+			<nav class="main">
+				<div class="container">
+					<div class="back-nav-container">
+						<a href="/Projets" class="back-nav-button w-inline-block">
+							<div>Retour</div>
+						</a>
+					</div>
+					<div class="content-container">
+						<h1 class="align">{project?.title}</h1>
+
+						<div class="project-desc w-richtext">
+							<ul role="list">
+								{project?.desc?.map(item => <li>{item}</li>)}
+							</ul>
+						</div>
+
+						<section class="project-content-area">
+							<div class="project-text">
+								<h4  class = "lead" style="margin-left: 100px;"> 
+									Transposition des altérations de la perception sonore du corps humain lors de crises d’anxiété en expérience 
+									sonore immersive. Au travers de l’analyse des processus psychoacoustiques se produisant entre le cerveau et les 
+									dispositifs de perceptions auditives humains composés de l’oreille et l'oreille interne, Paysage Anxieux tente 
+									de proposer une interprétation concrète de ces évènements.</br></br>
+									Créer pour une diffusion dans un dôme de 16 hauts parleurs - ici en version binaurale.
+									Utilisez un casque pour l'écoute </br></br>
+									 </h4>
+								<h4  style="font-size : 25px; margin-left: 100px;" class="project-title" >Crédits :</h4></br>
+
+								<h4 class="lead" style="margin-left: 100px;">
+									Entrevues, composition et spatialisation sonore : Dimitri Delphin</br>
+									Image d’illustration : générée avec Midjourney</br>
+									Production : GRMS</br>
+									Année : 2021</h4></br></br>
+
+
+							</div>
+
+							<div class="project-media-grid">
+								<div class="project-video">
+									<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1198165462&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dimitri-delphin" title="Dimitri Delphin" target="_blank" style="color: #cccccc; text-decoration: none;">Dimitri Delphin</a> · <a href="https://soundcloud.com/dimitri-delphin/paysages-anxieux-binaural" title="Paysages Anxieux  BINAURAL" target="_blank" style="color: #cccccc; text-decoration: none;">Paysages Anxieux  BINAURAL</a></div>
+								</div>
+
+							</div>
+						</section>
+
+					</div>
+				</div>
+			</nav>
+		</div>
+	</body>
+</html>
+
