@@ -2,6 +2,7 @@
 import Header from '../../../components/Header.astro';
 import Sidebar from '../../../components/Sidebar.astro';
 import { projects, getProjectBySlug } from '../../../data/projects.js';
+import { Tweet, Vimeo, YouTube } from 'astro-embed';
 const project = getProjectBySlug('La Plage aux Crabes');
 ---
 
@@ -30,7 +31,7 @@ const project = getProjectBySlug('La Plage aux Crabes');
 						<section class="project-content-area">
 							<div class="project-text">
 								<h4  class = "lead" style="margin-left: 100px;"> 
-									La Plage aux Crabes est une expérience documentaire audio immersive qui explore la manière dont plusieurs récits 
+									La Plage aux Crabes est un documentaire sonore immersif qui explore la manière dont plusieurs récits 
 									de vie peuvent s’unir pour former une mémoire collective. </br></br>
 									Réalisée dans le cadre d’une maîtrise en recherche-création
 									à l’Université du Québec à Montréal, l’œuvre plonge le public dans les récits intimes de cinq personnes ayant traversé
@@ -79,17 +80,13 @@ const project = getProjectBySlug('La Plage aux Crabes');
 
 							<div class="project-media-grid">
 								<div class="project-video">
-									<iframe
-									title="vimeo-player" 
-									src="https://www.youtube.com/watch?v=0btOr3sscrA" 
-									width="640" 
-									height="360"
-									class="center" 
-									frameborder="0"
+									<iframe 
+									width="760" height="auto" 
+									src="https://www.youtube.com/embed/0btOr3sscrA?si=OQ_qLzijgqlYdKNW" 
+									title="YouTube video player" frameborder="0" 
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 									referrerpolicy="strict-origin-when-cross-origin" 
-									allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-									allowfullscreen>
-									</iframe>
+									allowfullscreen></iframe>
 								</div>
 								<figure class="project-figure">
 									<img src="/assets/PAC_05_crédit-Maude Turcot.jpeg"
