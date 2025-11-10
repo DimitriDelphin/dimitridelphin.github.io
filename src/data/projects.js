@@ -16,8 +16,8 @@ export const projects = [
 
   },
   {
-    slug: 'Paysage Anxieux',
-    title: 'Paysage Anxieux',
+    slug: 'Paysages Anxieux',
+    title: 'Paysages Anxieux',
     desc: [
 
     ],
